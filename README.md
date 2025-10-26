@@ -1,24 +1,47 @@
-## Plant Disease Detection Project — Results & Observations
+# 🌿 Plant Disease Detection Project
 
-### **Dataset & Preprocessing**
-- **Dataset:** PlantVillage (15 classes, 20,638 images)
-- **Preprocessing:** Images resized to 224×224, pixel normalization, extensive augmentation (rotation, shift, zoom, horizontal flip, brightness adjustment)
-- **Splits:** 80% for training (16,516), 20% for validation (4,122)
+> 🌱 A Deep Learning–based system to identify plant leaf diseases using CNN and Transfer Learning.
 
----
-
-### **Models Trained**
-1. **Custom CNN**  
-   - Deep convolutional architecture with batch normalization and dropout.
-   - Trained from scratch, regularized to prevent overfitting.
-
-2. **Transfer Learning (ResNet50)**
-   - Pre-trained on ImageNet, fine-tuned for 15 plant disease classes.
-   - Top layers trained, ResNet base frozen.
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/gamikapunsisi/Plant_Disease_Detection)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/gamikapunsisi/Plant_Disease_Detection.svg)](https://github.com/gamikapunsisi/Plant_Disease_Detection/stargazers)
 
 ---
 
-### **Performance Metrics**
+## 📖 Overview
+This project uses **Convolutional Neural Networks (CNN)** to detect plant leaf diseases with high accuracy.  
+The system helps farmers and researchers identify diseases early and take preventive actions to improve crop health and yield.
+
+---
+
+## 🧩 Dataset & Preprocessing
+- **Dataset:** PlantVillage (15 classes, 20,638 images)  
+- **Preprocessing:**  
+  - Resized to 224×224 pixels  
+  - Pixel normalization  
+  - Extensive augmentation: rotation, shift, zoom, horizontal flip, brightness adjustment  
+- **Splits:**  
+  - Training: 80% (16,516 images)  
+  - Validation: 20% (4,122 images)
+
+---
+
+## 🧠 Models Trained
+
+### 1️⃣ Custom CNN  
+- Deep convolutional architecture with **Batch Normalization** and **Dropout**  
+- Trained from scratch  
+- Regularized to prevent overfitting  
+
+### 2️⃣ Transfer Learning — ResNet50  
+- Pre-trained on **ImageNet**  
+- Fine-tuned for 15 plant disease classes  
+- Top layers trained, ResNet base frozen  
+
+---
+
+## 📊 Performance Metrics
 
 | Model                | Accuracy | Precision | Recall | F1-Score |
 |----------------------|---------:|----------:|-------:|---------:|
@@ -27,26 +50,48 @@
 
 ---
 
-### **Key Observations & Justification**
+## 🔍 Key Observations & Insights
 
-- **Custom CNN outperformed ResNet50 transfer learning** on all metrics, achieving nearly 98% validation accuracy and macro F1-score.
-- **ResNet50 transfer learning** performed significantly worse (~61% accuracy). Possible reasons:
-    - Custom CNN may be more tailored for the specific image features and dataset size.
-    - ResNet50's frozen layers may not capture unique plant disease patterns without further fine-tuning.
-- **Overfitting was successfully prevented** in Custom CNN:
-    - Validation accuracy closely tracked training accuracy.
-    - Data augmentation, dropout, and batch normalization contributed to high generalization.
-    - Regularization and learning rate scheduling further improved stability.
-- **Class-wise analysis** (from confusion matrix and metrics): Most classes were classified correctly; minor confusion in visually similar diseases.
-- **Augmentation and careful preprocessing** were critical to achieving high accuracy.
+- **Custom CNN** outperformed **ResNet50**, achieving nearly **98% accuracy** and excellent generalization.  
+- **ResNet50’s lower performance (61%)** is likely due to frozen layers not adapting well to plant-specific patterns.  
+- **Data augmentation**, **dropout**, and **batch normalization** successfully reduced overfitting.  
+- Class-wise results show minor confusion among visually similar diseases.  
+- Proper preprocessing and regularization played a major role in achieving stable and high accuracy.
 
 ---
 
-### **Conclusion**
+## 🏁 Conclusion
+- ✅ **Best Model:** Custom CNN (trained from scratch)  
+- 🧠 **Why:** Tailored for dataset, strong regularization, and effective augmentation  
+- 📋 **Requirements:** Dataset, preprocessing, model comparison, and analysis — all completed successfully  
 
-- **Best model:** Custom CNN (from scratch)
-- **Why:** Better fit for the dataset, effective regularization, and augmentation.
-- **Project Requirements:** All fulfilled—dataset, preprocessing, two models, metrics, and reasoned observations.
+---
+
+## 🖼️ Example Output
+| Input Image | Predicted Disease |
+|--------------|-------------------|
+| ![Leaf](https://via.placeholder.com/120x120.png?text=Leaf+Image) | *Powdery Mildew* |
+
+---
+
+## 💡 Future Work
+- Add more plant species  
+- Integrate live camera prediction  
+- Deploy on AWS or Streamlit  
+- Improve dataset balance  
+
+---
+
+## 👩‍💻 Author
+**Gamika Punsisi**  
+📧 [Email Me](mailto:gamikapunsisi@gmail.com)  
+🌐 [GitHub Profile](https://github.com/gamikapunsisi)
+
+---
+
+## ⭐ Support
+If you find this project helpful, please consider **starring** ⭐ the repository.  
+It encourages me to improve and share more open-source AI projects!
 
 ---
 
